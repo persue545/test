@@ -23,11 +23,15 @@ private:
 export class Shape
 {
 public:
-    Shape(Point o);            //构造函数声明，通常不会被继承
-    Shape(double x, double y); //重载的构造函数
-    void move(Point p);        //普通函数声明，可被继承
+    Shape(Point o);                       //构造函数声明，通常不会被继承
+    Shape(double x, double y);            //重载的构造函数
+    virtual ~Shape();
+
+    void move(Point p);                   //普通函数声明，可被继承
+    virtual void resize(double ratio) = 0;//泛化子类的相似操作为基类抽象操作，
+                                          //作为子类相似操作的共同接口，可被继承
 private:
-    Point m_origin;            //属性描述，可被继承
+    Point m_origin;                       //属性描述，可被继承
 };
 
 Point::Point(double x, double y)
@@ -44,9 +48,12 @@ Shape::Shape(double x, double y)
     :m_origin(x,y)
 {}
 
+Shape::~Shape()
+{}
+
 void Shape::move(Point p)//泛化的方法，被子类继承
 {
     print("    moving to a new Point:{} "
-          "using Shape::move().\n", p.toString());
+          "using Shape::move().\n",p.toString());
     m_origin = p;
 }
