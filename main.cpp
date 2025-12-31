@@ -5,6 +5,17 @@ using std::print;
 
 int main()
 {
+    ///
+    /// \brief p
+    /////
+    /// /
+    /// /
+    /// /
+    /// /
+    /// /
+    /// /
+    /// /
+    ///
     Point p(1.0, 1.0);
 
     Shape *ps = new Circle(p, 1.0);
