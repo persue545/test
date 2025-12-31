@@ -11,6 +11,7 @@ project(graphics LANGUAGES CXX)
 add_executable(graphics
     #math.cpp                              # 模块实现单元
     main.cpp
+    hello.cppm
 
 )
 

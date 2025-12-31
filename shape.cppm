@@ -5,6 +5,8 @@
 //     Shape is the base class for all graphics classes
 //     Every Shape object has a Point object representing its center
 
+//魔改。卡珊德拉asmdl;asmdasm;
+
 export module graphics:shape;
 
 import std;
